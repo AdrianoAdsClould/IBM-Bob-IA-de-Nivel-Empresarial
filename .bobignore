@@ -33,3 +33,15 @@ jacoco.exec
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Dependências de projeto
+node_modules/
+
+# Cache de progresso
+PRJ-IBM-BOB/data/cache-progresso/
+
+# Certificados emitidos
+PRJ-IBM-BOB/docs/certificados-emitidos/
+
+# Templates
+*.tmpl
