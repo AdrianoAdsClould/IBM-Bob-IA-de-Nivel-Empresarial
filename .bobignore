@@ -1,0 +1,35 @@
+# Arquivos compilados
+target/
+build/
+.gradle/
+out/
+bin/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+.settings/
+
+# Logs e temporários
+*.log
+logs/
+*.tmp
+*.bak
+
+# Segredos
+.env
+.env.*
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# Dependências e relatórios gerados
+coverage/
+.jacoco/
+jacoco.exec
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
