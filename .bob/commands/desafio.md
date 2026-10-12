@@ -1,70 +1,66 @@
 ---
-description: Gera um desafio de código aleatório baseado no nível e tecnologia escolhidos pelo usuário
+description: Gera um desafio de código aleatório baseado no nível e tecnologia escolhidos
 argument-hint: <tecnologia> <nivel>
 ---
 
-O usuário quer um desafio de código. Argumentos recebidos: **$ARGUMENTS**
+Leia o arquivo `IBM-Bob-IA-de-Nivel-Empresarial/PRJ-IBM-BOB/data/trilhas.json` e encontre a trilha cuja `tecnologia` ou `nome` contenha **$1** (case-insensitive).
 
-Extraia do argumento:
-- **Tecnologia**: primeira palavra ou termo reconhecível como tecnologia (ex: Java, Python, React, SQL...)
-- **Nível**: Básico, Intermediário ou Avançado (se não informado, use Intermediário)
+- **Tecnologia:** $1
+- **Nível:** $2 (se não informado, use `Intermediário`)
 
-Siga exatamente estes passos:
-
-1. Leia o arquivo `PRJ-IBM-BOB/data/trilhas.json` e localize a trilha correspondente à tecnologia e nível informados.
-2. Com base na tecnologia e nível encontrados, gere um desafio de código original, criativo e educativo.
-3. Formate e exiba o desafio no seguinte padrão:
+Com base na trilha encontrada, gere e exiba no chat um desafio de código original:
 
 ---
 
-## ⚔️ Desafio de Código — {tecnologia} | Nível: {nivel}
+## ⚔️ Desafio de Código — $1 | Nível: $2
 
-**Trilha relacionada:** {nome da trilha encontrada no JSON}
-**XP ao completar este desafio:** (calcule 10% do xp_total da trilha)
-**Badge desbloqueável:** (escolha uma badge relevante da trilha)
+| Campo | Valor |
+|-------|-------|
+| 📚 Trilha | {nome da trilha encontrada} |
+| ⭐ XP do Desafio | {10% do xp_total da trilha} XP |
+| 🏅 Badge Desbloqueável | {primeira badge relevante de badges_disponiveis} |
 
 ---
 
 ### 📋 Descrição do Desafio
 
-Descreva um problema real e contextualizado para a tecnologia escolhida. O desafio deve ser:
-- **Básico**: algorítmico simples, manipulação de dados, funções básicas
-- **Intermediário**: integração de conceitos, uso de bibliotecas, padrões de projeto
+Crie um problema real e contextualizado para **$1** no nível **$2**:
+- **Básico**: algoritmo simples, manipulação de dados, funções fundamentais
+- **Intermediário**: integração de conceitos, bibliotecas, padrões de projeto
 - **Avançado**: arquitetura, performance, segurança, casos de uso em produção
 
 ---
 
 ### 📥 Entrada Esperada
 
-Descreva claramente qual entrada o programa/função deve receber (com exemplos concretos).
+Descreva o input que a função/programa deve receber, com 2 exemplos concretos.
 
 ---
 
 ### 📤 Saída Esperada
 
-Descreva o resultado esperado com pelo menos 2 exemplos de input/output.
+Descreva o output esperado com os 2 exemplos correspondentes de input → output.
 
 ---
 
-### 💡 Dicas
+### 💡 Dicas Progressivas
 
-Forneça 3 dicas progressivas (sem entregar a solução):
-1. Dica leve (conceito a revisar)
-2. Dica média (abordagem sugerida)
-3. Dica forte (estrutura do algoritmo)
+1. 🟢 **Dica 1 (leve):** conceito ou documentação a revisar
+2. 🟡 **Dica 2 (média):** abordagem ou estrutura sugerida
+3. 🔴 **Dica 3 (forte):** esboço do algoritmo sem entregar a solução
 
 ---
 
 ### ✅ Critérios de Avaliação
 
-Liste 4 critérios que serão avaliados na solução (ex: eficiência, legibilidade, tratamento de erros, boas práticas).
+Liste 4 critérios que serão avaliados na solução (ex: eficiência, legibilidade, tratamento de erros, boas práticas da tecnologia).
 
 ---
 
-### 🚀 Bônus (opcional)
+### 🚀 Desafio Bônus (opcional)
 
-Sugira uma extensão do desafio para quem quiser ir além.
+Sugira uma extensão do desafio para quem quiser ir além do requisito mínimo.
 
 ---
 
-Se a tecnologia não for encontrada no JSON, informe as disponíveis e peça para o usuário escolher uma.
+Se **$1** não for encontrada no arquivo, liste todos os nomes de trilhas disponíveis e peça ao usuário para escolher.

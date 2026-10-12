@@ -1,28 +1,24 @@
 ---
 description: Gera um certificado fictício em markdown com o nome do usuário e a trilha concluída
-argument-hint: <seu-nome> <nome-da-trilha>
+argument-hint: <seu-nome> <trilha>
 ---
 
-O usuário quer gerar um certificado. Argumentos recebidos: **$ARGUMENTS**
+Leia o arquivo `IBM-Bob-IA-de-Nivel-Empresarial/PRJ-IBM-BOB/data/trilhas.json` e encontre a trilha cuja `tecnologia` ou `nome` contenha **$2** (case-insensitive).
 
-Extraia do argumento:
-- **Nome do usuário**: primeiro(s) token(s) que representam um nome próprio
-- **Trilha concluída**: restante do argumento (nome ou tecnologia da trilha)
+- **Nome do usuário:** $1
+- **Trilha concluída:** $2
 
-Siga exatamente estes passos:
-
-1. Leia o arquivo `PRJ-IBM-BOB/data/trilhas.json` e localize a trilha pelo nome ou tecnologia informada.
-2. Com os dados encontrados, gere e exiba no chat o certificado completo no seguinte formato markdown:
+Com os dados encontrados, gere e exiba no chat o certificado completo abaixo:
 
 ---
 
 ```
-╔══════════════════════════════════════════════════════════════════╗
-║                                                                  ║
-║              🏆  CERTIFICADO DE CONCLUSÃO  🏆                   ║
-║                                                                  ║
-║                     DIO — Digital Innovation One                 ║
-╚══════════════════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║           🏆  CERTIFICADO DE CONCLUSÃO  🏆                  ║
+║                                                              ║
+║                 DIO — Digital Innovation One                 ║
+╚══════════════════════════════════════════════════════════════╝
 ```
 
 ---
@@ -31,11 +27,11 @@ Siga exatamente estes passos:
 
 **Este certificado é concedido a:**
 
-# {NOME DO USUÁRIO EM MAIÚSCULAS}
+# $1
 
 **pela conclusão com êxito da trilha:**
 
-## {nome da trilha}
+## {nome da trilha encontrada no JSON}
 
 ---
 
@@ -47,31 +43,31 @@ Siga exatamente estes passos:
 | ⭐ XP Conquistado | {xp_total} XP |
 | 🏅 Badge Principal | {última badge de badges_disponiveis} |
 | 📅 Data de Emissão | {data atual no formato DD/MM/AAAA} |
-| 🔑 Código do Certificado | DIO-{id da trilha}-{ano atual}-{4 caracteres aleatórios em maiúsculas} |
+| 🔑 Código do Certificado | DIO-{id}-{ano atual}-{4 letras aleatórias maiúsculas} |
 
 ---
 
 ### 🏅 Badges Conquistadas
 
-{liste todas as badges_disponiveis com emoji de medalha na frente de cada uma}
+Liste cada badge de `badges_disponiveis` precedida de `🥇`.
 
 ---
 
-### 💬 Mensagem de Parabéns
+### 💬 Parabéns, $1!
 
-Escreva uma mensagem motivacional personalizada de 3 linhas parabenizando o usuário pelo nome, mencionando a tecnologia aprendida e encorajando os próximos passos na carreira tech.
-
----
-
-### 🔗 Verificação
-
-> Este certificado foi gerado pela plataforma **DIO** em parceria com **IBM Bob IA**.
-> Para verificar a autenticidade, acesse: `https://web.dio.me/certificate/{código do certificado}`
+Escreva uma mensagem motivacional de 3 linhas: parabenize pelo nome, mencione a tecnologia aprendida e encoraje os próximos passos na carreira tech.
 
 ---
 
-*Gerado automaticamente pelo slash command `/certificado` do IBM Bob IA de Nível Empresarial*
+### 🔗 Verificação de Autenticidade
+
+> Certificado gerado pela plataforma **DIO** em parceria com **IBM Bob IA**.
+> Verifique em: `https://web.dio.me/certificate/{código do certificado}`
 
 ---
 
-Se a trilha não for encontrada no JSON, liste todas as trilhas disponíveis e peça para o usuário escolher uma.
+*Gerado automaticamente pelo comando `/certificado` — IBM Bob IA de Nível Empresarial*
+
+---
+
+Se **$2** não for encontrada no arquivo, liste todos os nomes de trilhas disponíveis e peça ao usuário para escolher.
