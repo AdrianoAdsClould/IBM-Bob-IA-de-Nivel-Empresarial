@@ -3,7 +3,7 @@ description: Gera um certificado fictício em markdown com o nome do usuário e 
 argument-hint: <seu-nome> <trilha>
 ---
 
-Leia o arquivo `IBM-Bob-IA-de-Nivel-Empresarial/PRJ-IBM-BOB/data/trilhas.json` e encontre a trilha cuja `tecnologia` ou `nome` contenha **$2** (case-insensitive).
+Leia o arquivo `PRJ-IBM-BOB/data/trilhas.json` e encontre a trilha cuja `tecnologia` ou `nome` contenha **$2** (case-insensitive).
 
 - **Nome do usuário:** $1
 - **Trilha concluída:** $2

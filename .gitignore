@@ -1,0 +1,25 @@
+# Dependências
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Build TypeScript
+dist/
+build/
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Arquivos de configuração MCP local (contém caminhos absolutos da máquina)
+.bob/mcp.json
+
+# Certificados gerados localmente
+PRJ-IBM-BOB/geo_explorer/docs/certificados-emitidos/
+
+# Arquivos temporários
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

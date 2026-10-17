@@ -1,0 +1,28 @@
+{
+  "name": "geo-explorer-mcp",
+  "version": "1.0.0",
+  "description": "GEO-EXPLORER MCP Server — expõe ferramentas de trilhas, desafios e certificados para o IBM Bob",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && chmod 755 build/index.js",
+    "start": "node build/index.js"
+  },
+  "bin": {
+    "geo-explorer-mcp": "./build/index.js"
+  },
+  "files": ["build"],
+  "keywords": ["mcp", "dio", "ibm-bob", "trilhas"],
+  "author": "DIO — Digital Innovation One",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

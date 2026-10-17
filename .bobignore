@@ -1,47 +1,18 @@
-# Arquivos compilados
-target/
-build/
-.gradle/
-out/
-bin/
+# Bob Ignore File
+# Este arquivo define padrões de arquivos e diretórios que devem ser ignorados pelo Bob
 
-# IDEs
-.idea/
-.vscode/
-*.iml
-.settings/
-
-# Logs e temporários
-*.log
-logs/
-*.tmp
-*.bak
-
-# Segredos
-.env
-.env.*
-application-local.properties
-application-local.yml
-application-local.yaml
-
-# Dependências e relatórios gerados
-coverage/
-.jacoco/
-jacoco.exec
-
-# Sistema operacional
-.DS_Store
-Thumbs.db
-Desktop.ini
-
-# Dependências de projeto
+# Dependências
 node_modules/
 
-# Cache de progresso
-PRJ-IBM-BOB/data/cache-progresso/
+# Variáveis de ambiente
+.env
+.env.*
+
+# Cache e dados temporários
+data/cache-progresso/
 
 # Certificados emitidos
-PRJ-IBM-BOB/docs/certificados-emitidos/
+docs/certificados-emitidos/
 
-# Templates
-*.tmpl
+# Arquivos temporários
+*.tmp

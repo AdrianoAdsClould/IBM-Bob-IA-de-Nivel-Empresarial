@@ -1,0 +1,418 @@
+{
+  "trilhas": [
+    {
+      "id": 1,
+      "nome": "Formação Java Developer",
+      "tecnologia": "Java",
+      "nivel": "Intermediário",
+      "numeroModulos": 12,
+      "xpTotal": 48000,
+      "badgesDisponiveis": [
+        "Java Fundamentals",
+        "OOP Master",
+        "Spring Boot Hero",
+        "API REST Expert",
+        "Java Developer"
+      ],
+      "promocoes": ["20% OFF até 31/12/2025 — Cupom: JAVA20"],
+      "vitalicio": true,
+      "livesAoVivo": [
+        "Java 21: Novidades e Recursos (10/02/2025 às 19:00)",
+        "Spring Boot na Prática (05/03/2025 às 20:00)"
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Formação Python Developer",
+      "tecnologia": "Python",
+      "nivel": "Básico",
+      "numeroModulos": 10,
+      "xpTotal": 38000,
+      "badgesDisponiveis": [
+        "Python Basics",
+        "Data Structures",
+        "Automation Expert",
+        "Python Developer"
+      ],
+      "promocoes": ["15% OFF até 30/11/2025 — Cupom: PYTHON15"],
+      "vitalicio": true,
+      "livesAoVivo": [
+        "Python para Iniciantes (20/01/2025 às 18:00)",
+        "Automatizando tarefas com Python (28/02/2025 às 19:30)"
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Formação Machine Learning Specialist",
+      "tecnologia": "Machine Learning",
+      "nivel": "Avançado",
+      "numeroModulos": 16,
+      "xpTotal": 72000,
+      "badgesDisponiveis": [
+        "ML Fundamentals",
+        "Deep Learning Pro",
+        "Neural Network Architect",
+        "TensorFlow Expert",
+        "ML Specialist"
+      ],
+      "promocoes": ["30% OFF até 30/06/2025 — Cupom: ML30DIO"],
+      "vitalicio": false,
+      "livesAoVivo": [
+        "Introdução ao Machine Learning (15/03/2025 às 20:00)",
+        "Redes Neurais do Zero (10/04/2025 às 19:00)",
+        "Deploy de Modelos ML em Produção (08/05/2025 às 20:30)"
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "Formação React Developer",
+      "tecnologia": "React",
+      "nivel": "Intermediário",
+      "numeroModulos": 14,
+      "xpTotal": 52000,
+      "badgesDisponiveis": [
+        "React Basics",
+        "Hooks Master",
+        "Redux Expert",
+        "TypeScript Pro",
+        "React Developer"
+      ],
+      "promocoes": ["25% OFF até 30/09/2025 — Cupom: REACT25"],
+      "vitalicio": true,
+      "livesAoVivo": [
+        "React 19: O que há de novo? (18/02/2025 às 19:00)",
+        "Criando apps com Next.js (22/03/2025 às 20:00)"
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "Formação Angular Developer",
+      "tecnologia": "Angular",
+      "nivel": "Intermediário",
+      "numeroModulos": 13,
+      "xpTotal": 49000,
+      "badgesDisponiveis": [
+        "Angular Basics",
+        "RxJS Expert",
+        "Angular Material Pro",
+        "Angular Developer"
+      ],
+      "promocoes": ["10% OFF até 31/08/2025 — Cupom: ANGULAR10"],
+      "vitalicio": true,
+      "livesAoVivo": [
+        "Angular 17 na Prática (30/01/2025 às 19:30)"
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "Formação Cloud AWS",
+      "tecnologia": "AWS",
+      "nivel": "Intermediário",
+      "numeroModulos": 15,
+      "xpTotal": 65000,
+      "badgesDisponiveis": [
+        "AWS Cloud Practitioner",
+        "EC2 Expert",
+        "S3 Storage Pro",
+        "Lambda Serverless",
+        "AWS Solutions Architect"
+      ],
+      "promocoes": ["35% OFF até 31/07/2025 — Cupom: AWS35DIO"],
+      "vitalicio": false,
+      "livesAoVivo": [
+        "Primeiros Passos na AWS (05/02/2025 às 19:00)",
+        "Arquitetura Serverless com Lambda (12/03/2025 às 20:00)",
+        "Certificação AWS Cloud Practitioner (25/04/2025 às 19:30)"
+      ]
+    },
+    {
+      "id": 7,
+      "nome": "Formação Microsoft Azure Fundamentals",
+      "tecnologia": "Azure",
+      "nivel": "Básico",
+      "numeroModulos": 10,
+      "xpTotal": 40000,
+      "badgesDisponiveis": [
+        "Azure Basics",
+        "Azure Virtual Machines",
+        "Azure Storage Pro",
+        "AZ-900 Ready"
+      ],
+      "promocoes": ["20% OFF até 31/10/2025 — Cupom: AZURE20"],
+      "vitalicio": true,
+      "livesAoVivo": [
+        "Azure para Iniciantes (08/03/2025 às 18:00)",
+        "Preparatório AZ-900 (15/04/2025 às 19:00)"
+      ]
+    },
+    {
+      "id": 8,
+      "nome": "Formação Kubernetes e Docker",
+      "tecnologia": "DevOps",
+      "nivel": "Avançado",
+      "numeroModulos": 14,
+      "xpTotal": 60000,
+      "badgesDisponiveis": [
+        "Docker Fundamentals",
+        "Container Expert",
+        "Kubernetes Admin",
+        "Helm Charts Pro",
+        "DevOps Engineer"
+      ],
+      "promocoes": ["25% OFF até 31/05/2025 — Cupom: K8S25DIO"],
+      "vitalicio": false,
+      "livesAoVivo": [
+        "Docker do Zero ao Deploy (20/02/2025 às 20:00)",
+        "Orquestrando containers com Kubernetes (18/03/2025 às 19:30)"
+      ]
+    },
+    {
+      "id": 9,
+      "nome": "Formação Node.js Developer",
+      "tecnologia": "Node.js",
+      "nivel": "Intermediário",
+      "numeroModulos": 11,
+      "xpTotal": 45000,
+      "badgesDisponiveis": [
+        "Node.js Basics",
+        "REST API Builder",
+        "GraphQL Expert",
+        "Node.js Developer"
+      ],
+      "promocoes": ["15% OFF até 31/12/2025 — Cupom: NODE15"],
+      "vitalicio": true,
+      "livesAoVivo": [
+        "Criando APIs com Node.js e Express (25/01/2025 às 19:00)"
+      ]
+    },
+    {
+      "id": 10,
+      "nome": "Formação Data Science com Python",
+      "tecnologia": "Data Science",
+      "nivel": "Intermediário",
+      "numeroModulos": 15,
+      "xpTotal": 58000,
+      "badgesDisponiveis": [
+        "Data Science Basics",
+        "Pandas Master",
+        "Data Visualization Pro",
+        "Statistical Analysis",
+        "Data Scientist"
+      ],
+      "promocoes": ["30% OFF até 15/06/2025 — Cupom: DS30DIO"],
+      "vitalicio": false,
+      "livesAoVivo": [
+        "Análise Exploratória de Dados (12/02/2025 às 19:00)",
+        "Visualização de Dados com Matplotlib (20/03/2025 às 20:00)"
+      ]
+    },
+    {
+      "id": 11,
+      "nome": "Formação Engenharia de Dados",
+      "tecnologia": "Engenharia de Dados",
+      "nivel": "Avançado",
+      "numeroModulos": 18,
+      "xpTotal": 80000,
+      "badgesDisponiveis": [
+        "Data Engineering Basics",
+        "Spark Expert",
+        "Kafka Streaming Pro",
+        "Airflow Orchestrator",
+        "Data Engineer"
+      ],
+      "promocoes": ["40% OFF até 30/04/2025 — Cupom: DE40DIO"],
+      "vitalicio": false,
+      "livesAoVivo": [
+        "Pipeline de Dados com Apache Airflow (05/03/2025 às 20:00)",
+        "Streaming em Tempo Real com Kafka (02/04/2025 às 19:30)",
+        "Big Data com Apache Spark (14/05/2025 às 20:00)"
+      ]
+    },
+    {
+      "id": 12,
+      "nome": "Formação Flutter Developer",
+      "tecnologia": "Flutter",
+      "nivel": "Intermediário",
+      "numeroModulos": 12,
+      "xpTotal": 46000,
+      "badgesDisponiveis": [
+        "Flutter Basics",
+        "Dart Pro",
+        "Mobile UI Expert",
+        "Flutter Developer"
+      ],
+      "promocoes": ["20% OFF até 30/11/2025 — Cupom: FLUTTER20"],
+      "vitalicio": true,
+      "livesAoVivo": [
+        "Criando apps mobile com Flutter (22/02/2025 às 19:00)"
+      ]
+    },
+    {
+      "id": 13,
+      "nome": "Formação Inteligência Artificial Generativa",
+      "tecnologia": "IA Generativa",
+      "nivel": "Avançado",
+      "numeroModulos": 16,
+      "xpTotal": 75000,
+      "badgesDisponiveis": [
+        "Gen AI Basics",
+        "Prompt Engineering Pro",
+        "LangChain Expert",
+        "RAG Architect",
+        "Gen AI Specialist"
+      ],
+      "promocoes": ["35% OFF até 15/08/2025 — Cupom: GENAI35"],
+      "vitalicio": false,
+      "livesAoVivo": [
+        "Prompt Engineering na Prática (08/02/2025 às 19:00)",
+        "Construindo Agentes com LangChain (15/03/2025 às 20:00)",
+        "RAG: Augmentação com Retrieval (20/04/2025 às 19:30)"
+      ]
+    },
+    {
+      "id": 14,
+      "nome": "Formação Cybersecurity Specialist",
+      "tecnologia": "Cybersecurity",
+      "nivel": "Avançado",
+      "numeroModulos": 17,
+      "xpTotal": 70000,
+      "badgesDisponiveis": [
+        "Security Basics",
+        "Ethical Hacker",
+        "Penetration Tester",
+        "SOC Analyst",
+        "Cybersecurity Specialist"
+      ],
+      "promocoes": ["25% OFF até 31/07/2025 — Cupom: SEC25DIO"],
+      "vitalicio": false,
+      "livesAoVivo": [
+        "Fundamentos de Cibersegurança (28/01/2025 às 19:00)",
+        "Ethical Hacking com Kali Linux (10/03/2025 às 20:00)"
+      ]
+    },
+    {
+      "id": 15,
+      "nome": "Formação .NET Developer",
+      "tecnologia": ".NET",
+      "nivel": "Intermediário",
+      "numeroModulos": 13,
+      "xpTotal": 50000,
+      "badgesDisponiveis": [
+        "C# Basics",
+        "ASP.NET Core Pro",
+        "Entity Framework Expert",
+        ".NET Developer"
+      ],
+      "promocoes": ["15% OFF até 15/10/2025 — Cupom: DOTNET15"],
+      "vitalicio": true,
+      "livesAoVivo": [
+        ".NET 8 — O que mudou? (14/02/2025 às 19:00)",
+        "APIs com ASP.NET Core Minimal API (28/03/2025 às 20:00)"
+      ]
+    },
+    {
+      "id": 16,
+      "nome": "Formação Blockchain Developer",
+      "tecnologia": "Blockchain",
+      "nivel": "Avançado",
+      "numeroModulos": 14,
+      "xpTotal": 68000,
+      "badgesDisponiveis": [
+        "Blockchain Basics",
+        "Solidity Expert",
+        "Smart Contract Auditor",
+        "DeFi Builder",
+        "Blockchain Developer"
+      ],
+      "promocoes": ["30% OFF até 30/09/2025 — Cupom: WEB3DIO30"],
+      "vitalicio": false,
+      "livesAoVivo": [
+        "Introdução ao Blockchain (26/02/2025 às 19:00)",
+        "Desenvolvendo Smart Contracts (08/04/2025 às 20:00)"
+      ]
+    },
+    {
+      "id": 17,
+      "nome": "Formação SQL e Banco de Dados",
+      "tecnologia": "SQL",
+      "nivel": "Básico",
+      "numeroModulos": 9,
+      "xpTotal": 34000,
+      "badgesDisponiveis": [
+        "SQL Basics",
+        "Query Optimizer",
+        "Database Designer",
+        "DBA Junior"
+      ],
+      "promocoes": ["10% OFF até 31/12/2025 — Cupom: SQL10DIO"],
+      "vitalicio": true,
+      "livesAoVivo": [
+        "SQL do Zero ao Avançado (18/01/2025 às 18:30)"
+      ]
+    },
+    {
+      "id": 18,
+      "nome": "Formação DevOps Engineer",
+      "tecnologia": "CI/CD",
+      "nivel": "Avançado",
+      "numeroModulos": 16,
+      "xpTotal": 71000,
+      "badgesDisponiveis": [
+        "DevOps Basics",
+        "CI/CD Expert",
+        "Infrastructure as Code",
+        "Terraform Pro",
+        "DevOps Engineer"
+      ],
+      "promocoes": ["35% OFF até 31/05/2025 — Cupom: DEVOPS35"],
+      "vitalicio": false,
+      "livesAoVivo": [
+        "CI/CD com GitHub Actions (16/02/2025 às 19:30)",
+        "Infraestrutura como Código com Terraform (24/03/2025 às 20:00)"
+      ]
+    },
+    {
+      "id": 19,
+      "nome": "Formação Game Developer Unity",
+      "tecnologia": "Unity",
+      "nivel": "Intermediário",
+      "numeroModulos": 15,
+      "xpTotal": 55000,
+      "badgesDisponiveis": [
+        "Unity Basics",
+        "2D Game Expert",
+        "3D World Builder",
+        "Physics Master",
+        "Unity Game Developer"
+      ],
+      "promocoes": ["20% OFF até 15/11/2025 — Cupom: UNITY20"],
+      "vitalicio": true,
+      "livesAoVivo": [
+        "Criando seu primeiro jogo 2D (06/02/2025 às 19:00)",
+        "Física e colisões em jogos 3D (13/03/2025 às 20:00)"
+      ]
+    },
+    {
+      "id": 20,
+      "nome": "Formação IBM Watson & IA Empresarial",
+      "tecnologia": "IBM Watson",
+      "nivel": "Avançado",
+      "numeroModulos": 18,
+      "xpTotal": 85000,
+      "badgesDisponiveis": [
+        "IBM Cloud Basics",
+        "Watson Assistant Expert",
+        "NLP Specialist",
+        "AI Governance Pro",
+        "IBM AI Enterprise Developer"
+      ],
+      "promocoes": ["40% OFF até 30/06/2025 — Cupom: IBMAI40"],
+      "vitalicio": false,
+      "livesAoVivo": [
+        "IBM Watson: Construindo Assistentes Virtuais (10/02/2025 às 19:00)",
+        "AI Governance com IBM OpenScale (17/03/2025 às 20:00)",
+        "Deploy de modelos Watson em produção (28/04/2025 às 19:30)"
+      ]
+    }
+  ]
+}

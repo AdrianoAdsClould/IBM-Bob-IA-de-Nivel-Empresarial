@@ -3,7 +3,7 @@ description: Gera um plano de estudos formatado a partir de uma tecnologia em da
 argument-hint: <tecnologia>
 ---
 
-Leia o arquivo `IBM-Bob-IA-de-Nivel-Empresarial/PRJ-IBM-BOB/data/trilhas.json` e encontre a trilha cuja propriedade `tecnologia` ou `nome` contenha o termo **$1** (busca case-insensitive).
+Leia o arquivo `PRJ-IBM-BOB/data/trilhas.json` e encontre a trilha cuja propriedade `tecnologia` ou `nome` contenha o termo **$1** (busca case-insensitive).
 
 Com os dados encontrados, exiba no chat o seguinte plano de estudos:
 

@@ -3,7 +3,7 @@ description: Gera um desafio de código aleatório baseado no nível e tecnologi
 argument-hint: <tecnologia> <nivel>
 ---
 
-Leia o arquivo `IBM-Bob-IA-de-Nivel-Empresarial/PRJ-IBM-BOB/data/trilhas.json` e encontre a trilha cuja `tecnologia` ou `nome` contenha **$1** (case-insensitive).
+Leia o arquivo `PRJ-IBM-BOB/data/trilhas.json` e encontre a trilha cuja `tecnologia` ou `nome` contenha **$1** (case-insensitive).
 
 - **Tecnologia:** $1
 - **Nível:** $2 (se não informado, use `Intermediário`)

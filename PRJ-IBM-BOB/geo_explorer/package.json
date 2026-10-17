@@ -1,0 +1,25 @@
+{
+  "name": "geo-explorer",
+  "version": "1.0.0",
+  "description": "GEO-EXPLORER — Sistema de trilhas, desafios e certificados DIO × IBM Bob",
+  "main": "commands/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node commands/index.ts",
+    "test": "ts-node tests/run-all-tests.ts",
+    "test:trilha": "ts-node tests/trilha.test.ts",
+    "test:desafio": "ts-node tests/desafio.test.ts",
+    "test:certificado": "ts-node tests/certificado.test.ts"
+  },
+  "keywords": ["dio", "ibm-bob", "trilhas", "desafios", "certificados", "slash-commands"],
+  "author": "DIO — Digital Innovation One",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
