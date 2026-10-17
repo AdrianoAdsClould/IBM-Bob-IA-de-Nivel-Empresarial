@@ -1,45 +1,53 @@
 # 🌍 GEO-EXPLORER
 
-> Projeto de portfólio desenvolvido com **IBM Bob** como parte da formação **IBM Bob IA de Nível Empresarial** da [DIO — Digital Innovation One](https://dio.me).
+Projeto criado durante a formação **IBM Bob IA de Nível Empresarial**, da [DIO — Digital Innovation One](https://dio.me).
+
+Este projeto foi uma oportunidade de começar a aprender como usar o **IBM Bob como um assistente de programação**, ajudando a criar funcionalidades, organizar o código e testar o que foi desenvolvido.
 
 ---
 
 ## 📌 O que é o Geo-Explorer?
 
-O **Geo-Explorer** é um sistema de exploração de trilhas de aprendizagem que integra o IBM Bob com uma base de dados fictícia de formações tecnológicas da plataforma DIO.
+O **Geo-Explorer** é um projeto que simula uma plataforma de trilhas de aprendizagem na área de tecnologia, usando como exemplo cursos e formações fictícias da DIO.
 
-A proposta é simples: por meio de três comandos slash diretamente no chat do Bob, o usuário consegue:
+A ideia foi criar comandos simples para consultar trilhas, praticar programação e gerar certificados fictícios, tudo com a ajuda do IBM Bob.
 
-- 📚 **Consultar uma trilha** — recebe um plano de estudos estruturado por fases com a tecnologia escolhida;
-- ⚔️ **Receber um desafio de código** — obtém um exercício contextualizado, com requisitos, dicas progressivas e exemplos de entrada/saída;
-- 🏆 **Gerar um certificado fictício** — emite um documento Markdown de conclusão que é salvo localmente.
+O projeto possui três comandos principais:
 
-O projeto também expõe essas três funcionalidades como um **Servidor MCP local** (Model Context Protocol), permitindo que o IBM Bob acesse as ferramentas de forma nativa via protocolo.
+- 📚 **Consultar uma trilha:** mostra um plano de estudos dividido em etapas para uma tecnologia.
+- ⚔️ **Gerar um desafio:** apresenta um exercício de programação com instruções, dicas e exemplos.
+- 🏆 **Gerar um certificado:** cria um certificado fictício em Markdown e salva o arquivo no computador.
+
+Além disso, também desenvolvi um servidor MCP local para permitir que o IBM Bob utilize essas funcionalidades como ferramentas.
+
+Durante o desenvolvimento, fui aprendendo aos poucos como organizar os arquivos, escrever o código com a ajuda da IA e corrigir os erros que apareceram pelo caminho.
 
 ---
 
 ## 📁 Estrutura do Projeto
 
-```
+Abaixo está a organização principal dos arquivos:
+
+```text
 IBM-Bob-IA-de-Nivel-Empresarial/
 ├── .bob/
-│   ├── commands/               ← Slash commands do Bob
+│   ├── commands/
 │   │   ├── trilha.md
 │   │   ├── desafio.md
 │   │   └── certificado.md
-│   ├── slash-commands.json     ← Registro dos comandos (compatível com projeto de referência)
-│   └── skills/                 ← Skills auxiliares
+│   ├── slash-commands.json
+│   └── skills/
 │
 └── PRJ-IBM-BOB/
     └── geo_explorer/
         ├── commands/
-        │   ├── types.ts        ← Interfaces: Trilha, TrilhasData, Desafio
-        │   ├── trilha.ts       ← Lógica do comando /trilha
-        │   ├── desafio.ts      ← Lógica do comando /desafio (banco de 12 desafios reais)
-        │   ├── certificado.ts  ← Lógica do /certificado (salva .md em disco)
-        │   └── index.ts        ← Roteador central: processarComando()
+        │   ├── types.ts
+        │   ├── trilha.ts
+        │   ├── desafio.ts
+        │   ├── certificado.ts
+        │   └── index.ts
         ├── data/
-        │   └── trilhas_dio.json ← 20 trilhas fictícias DIO
+        │   └── trilhas_dio.json
         ├── docs/
         │   └── README.md
         ├── tests/
@@ -49,242 +57,304 @@ IBM-Bob-IA-de-Nivel-Empresarial/
         │   └── run-all-tests.ts
         ├── mcp/
         │   ├── src/
-        │   │   ├── index.ts    ← Entry-point do servidor MCP (stdio)
-        │   │   ├── tools.ts    ← 4 ferramentas registradas via registerTool
-        │   │   ├── services.ts ← Lógica de negócio reutilizável
-        │   │   └── types.ts    ← Interfaces do MCP
+        │   │   ├── index.ts
+        │   │   ├── tools.ts
+        │   │   ├── services.ts
+        │   │   └── types.ts
         │   ├── package.json
         │   └── tsconfig.json
         ├── package.json
         └── tsconfig.json
 ```
 
+Cada arquivo tem uma função no projeto. Alguns cuidam dos comandos, outros guardam os dados das trilhas, executam os testes ou fazem a comunicação com o servidor MCP.
+
 ---
 
-## 🚀 Como Executar o Projeto
+## 🚀 Como executar o projeto
 
 ### Pré-requisitos
 
-- [Node.js](https://nodejs.org/) >= 18
-- npm >= 9
-- [IBM Bob IDE](https://marketplace.visualstudio.com/items?itemName=IBM.wca-vscode-ext) instalado
+Antes de começar, você precisa ter instalado:
 
-### 1. Instalar dependências dos comandos
+- [Node.js](https://nodejs.org/) versão 18 ou superior.
+- npm versão 9 ou superior.
+- [IBM Bob IDE](https://marketplace.visualstudio.com/items?itemName=IBM.wca-vscode-ext).
+
+### 1. Instalar as dependências
+
+Abra o terminal na pasta do projeto e execute:
 
 ```bash
 cd PRJ-IBM-BOB/geo_explorer
 npm install
 ```
 
-### 2. Instalar dependências e compilar o servidor MCP
+Esse comando instala as dependências necessárias para executar o projeto.
+
+### 2. Preparar o servidor MCP
+
+Entre na pasta do servidor MCP, instale as dependências e compile o código:
 
 ```bash
-cd PRJ-IBM-BOB/geo_explorer/mcp
+cd mcp
 npm install
 npm run build
 ```
 
-### 3. Registrar o MCP Server no Bob
+A compilação transforma os arquivos TypeScript no código JavaScript que será executado pelo Node.js.
 
-Crie o arquivo `.bob/mcp.json` na raiz do projeto com o caminho absoluto gerado no seu ambiente:
+### 3. Configurar o MCP no IBM Bob
+
+Para que o Bob encontre o servidor, crie o arquivo `.bob/mcp.json` na raiz do projeto.
+
+Exemplo de configuração:
 
 ```json
 {
   "mcpServers": {
     "geo-explorer": {
       "command": "node",
-      "args": ["/caminho/absoluto/ate/PRJ-IBM-BOB/geo_explorer/mcp/build/index.js"]
+      "args": [
+        "/caminho/absoluto/ate/geo_explorer/mcp/build/index.js"
+      ]
     }
   }
 }
 ```
 
-> ⚠️ **Atenção:** o arquivo `.bob/mcp.json` está no `.gitignore` porque contém caminhos absolutos específicos da sua máquina. Nunca envie esse arquivo para o GitHub.
+Substitua o caminho de exemplo pelo caminho completo do arquivo gerado no seu computador.
+
+**Importante:** esse arquivo está no `.gitignore`, pois contém um caminho específico do ambiente local. Não envie essa configuração pessoal para o GitHub.
 
 ---
 
-## 💬 Como Usar os Comandos
+## 💬 Como usar os comandos
 
-Os slash commands ficam em `.bob/commands/` e aparecem automaticamente no menu `/` do IBM Bob.
+Uma das partes mais interessantes do projeto foi aprender a criar comandos personalizados para o IBM Bob.
 
-### `/trilha <tecnologia>`
+Os comandos ficam na pasta `.bob/commands/` e podem ser utilizados pelo menu de comandos do Bob, conforme a configuração do projeto.
 
-Consulta a base de trilhas e retorna um **plano de estudos completo** em 3 fases, com badges, lives ao vivo e promoções ativas.
+### 📚 1. Consultar uma trilha
 
-```
+O comando `/trilha` permite consultar uma tecnologia e receber uma sugestão de plano de estudos.
+
+Exemplos:
+
+```text
 /trilha Python
 /trilha React
 /trilha Java
 /trilha AWS
 ```
 
-**Exemplo de saída:**
-```
+O resultado apresenta informações como o nível da trilha, a quantidade de módulos, os pontos de experiência (XP) e uma sugestão de estudos dividida em três fases.
+
+Exemplo simplificado:
+
+```text
 🎯 Plano de Estudos — Python
 
-📊 Informações Gerais
-- Tecnologia: Python
-- Nível: Básico
-- Módulos: 10
-- XP Total: 38.000 pontos
+Tecnologia: Python
+Nível: Básico
+Módulos: 10
+XP Total: 38.000
 
-📝 Plano de Estudos Sugerido
-Fase 1 — Fundamentos (Módulos 1–4): conceitos básicos, sintaxe...
-Fase 2 — Intermediário (Módulos 5–7): padrões e integração...
-Fase 3 — Avançado (Módulos 8–10): arquitetura e produção...
+Fase 1 — Fundamentos
+Aprender os conceitos básicos da linguagem.
+
+Fase 2 — Intermediário
+Praticar funções e integração entre recursos.
+
+Fase 3 — Avançado
+Conhecer conceitos mais avançados e
+aplicar o conhecimento em projetos.
 ```
 
----
+Os dados são fictícios e foram criados para demonstrar o funcionamento do projeto.
 
-### `/desafio <tecnologia> [nivel]`
+### ⚔️ 2. Gerar um desafio de programação
 
-Gera um **desafio de código** contextualizado, com requisitos, dicas progressivas e exemplos de I/O.
+O comando `/desafio` cria um exercício de programação de acordo com a tecnologia e o nível escolhidos.
 
-Os níveis aceitos são: `Básico` (100 XP) · `Intermediário` (250 XP) · `Avançado` (500 XP).
+Exemplos:
 
-```
+```text
 /desafio Python Básico
 /desafio React Intermediário
 /desafio Java Avançado
 /desafio JavaScript
 ```
 
-**Exemplo de saída:**
-```
-⚔️ Desafio de Código — Python
-## Calculadora de Fibonacci com Memoization
+Os desafios possuem três níveis:
 
-Dificuldade: Básico | Pontos: 100 XP
+- **Básico:** 100 XP.
+- **Intermediário:** 250 XP.
+- **Avançado:** 500 XP.
 
-Requisitos:
-1. Função que recebe inteiro n e retorna F(n)
-2. Implementar cache para evitar recálculos
-...
+Cada exercício pode apresentar um problema para resolver, requisitos, dicas e exemplos de entrada e saída.
 
-Dicas:
-- Use um dicionário como cache: memo = {}
-- Caso base: F(0)=0, F(1)=1
-...
-```
+O projeto possui desafios cadastrados para Python, Java, React e JavaScript. Quando não existe um desafio específico para a tecnologia escolhida, o sistema pode gerar uma opção genérica.
 
----
+Essa funcionalidade foi uma forma de praticar a criação de regras e respostas usando TypeScript com o apoio do IBM Bob.
 
-### `/certificado "<nome>" "<trilha>"`
+### 🏆 3. Gerar um certificado fictício
 
-Gera um **certificado fictício em Markdown**, salvo automaticamente em `docs/certificados-emitidos/`, com código único de verificação.
+O comando `/certificado` gera um arquivo Markdown com os dados de uma pessoa e da trilha escolhida.
 
-```
+Exemplos:
+
+```text
 /certificado "João Silva" "Python"
 /certificado "Maria Santos" "React"
 /certificado "Pedro Oliveira" "Java"
 ```
 
-**Exemplo de saída:**
-```
-✅ Certificado Gerado com Sucesso!
-🎉 Parabéns, João Silva!
+O arquivo é salvo na pasta `docs/certificados-emitidos/` e recebe um código de verificação único.
 
+Exemplo de resultado:
+
+```text
+✅ Certificado gerado com sucesso!
+
+Parabéns, João Silva!
+
+Trilha: Python
 Código: DIO-2-2025-XKQM
-Arquivo: .../docs/certificados-emitidos/cert_João_Silva_Python_...md
+
+Arquivo: cert_João_Silva_Python_...md
 ```
+
+O certificado é apenas uma demonstração do funcionamento do sistema. Ele não representa uma certificação oficial da DIO ou de outra instituição.
 
 ---
 
-## 🧪 Como Executar os Testes
+## 🧪 Como executar os testes
 
-Na pasta `PRJ-IBM-BOB/geo_explorer`:
+Além de desenvolver as funcionalidades, também trabalhei com testes para verificar se os comandos estavam funcionando como esperado.
+
+Na pasta `PRJ-IBM-BOB/geo_explorer`, execute:
 
 ```bash
-# Rodar todos os testes de uma vez
 npm test
+```
 
-# Rodar suite individual
+Também é possível executar cada conjunto de testes separadamente:
+
+```bash
 npm run test:trilha
 npm run test:desafio
 npm run test:certificado
 ```
 
-**Resultado esperado:**
+O projeto possui testes para verificar situações como:
 
-```
-====================================
-  GEO-EXPLORER — Suite de Testes
-====================================
+- Busca por tecnologias com letras maiúsculas ou minúsculas.
+- Tratamento de tecnologias não cadastradas.
+- Geração de desafios por nível.
+- Criação dos arquivos de certificado.
+- Geração de códigos diferentes para certificados.
+- Tratamento de entradas inválidas.
 
-📚 Suite: Trilha    → 12/12 ✅
-⚔️  Suite: Desafio   → 14/14 ✅
-🏆 Suite: Certificado → 17/17 ✅
-
-====================================
-✅ Passaram : 43
-❌ Falharam : 0
-⏱️  Duração  : ~5s
-====================================
-🎉 Todos os testes passaram!
-```
-
-Os testes validam: busca case-insensitive, tratamento de tecnologia inválida, geração de código único por certificado, criação de arquivo em disco, níveis de dificuldade e muito mais.
+**Resultado esperado:** 43 testes aprovados e nenhum teste com falha, conforme a suíte de testes desenvolvida para o projeto.
 
 ---
 
-## 🔧 Ferramentas MCP Disponíveis
+## 🔧 Ferramentas disponíveis pelo MCP
 
-Após registrar o servidor MCP no Bob, as seguintes ferramentas ficam disponíveis nativamente:
+Outra parte do aprendizado foi conhecer o MCP (*Model Context Protocol*).
 
-| Ferramenta | Descrição |
+De forma simples, o MCP permite que uma aplicação disponibilize ferramentas para que um assistente de IA possa utilizá-las de maneira organizada.
+
+Neste projeto, criei quatro ferramentas:
+
+| Ferramenta | Para que serve |
 |---|---|
-| `listar-trilhas` | Lista todas as 20 trilhas com tecnologia, nível e XP |
-| `buscar-trilha` | Retorna plano de estudos completo por tecnologia |
-| `gerar-desafio` | Gera desafio contextualizado por tecnologia e nível |
-| `emitir-certificado` | Emite certificado fictício de conclusão |
+| `listar-trilhas` | Mostra as trilhas cadastradas. |
+| `buscar-trilha` | Busca uma trilha e apresenta seu plano de estudos. |
+| `gerar-desafio` | Cria um desafio de programação. |
+| `emitir-certificado` | Gera um certificado fictício. |
+
+Com o servidor configurado corretamente, o IBM Bob pode acessar essas ferramentas por meio do MCP.
 
 ---
 
-## ✨ Melhorias Realizadas
+## ✨ O que consegui melhorar no projeto
 
-Em relação ao projeto base da formação, foram adicionadas as seguintes melhorias:
+Durante o desenvolvimento, também fiz algumas melhorias para deixar o código mais organizado e o sistema mais completo.
 
-1. **`types.ts` centralizado** — interfaces `Trilha`, `TrilhasData` e `Desafio` em arquivo único, eliminando duplicação entre os módulos.
+**1. Organização dos tipos**
 
-2. **Banco de desafios reais** — 12 desafios com enunciados completos (não genéricos) para Python, Java, React e JavaScript, com 3 níveis cada (Básico, Intermediário, Avançado).
+Criei um arquivo `types.ts` para reunir interfaces utilizadas em diferentes partes do código. Isso ajudou a evitar repetições.
 
-3. **Tokenizador de aspas** — o roteador `processarComando()` interpreta corretamente argumentos com espaços entre aspas duplas, como `/certificado "João Silva" "React"`.
+**2. Desafios mais completos**
 
-4. **Fallback inteligente** — quando a tecnologia não tem desafio específico no banco, o sistema gera um desafio genérico contextualizado em vez de retornar erro.
+Em vez de trabalhar apenas com exercícios genéricos, organizei desafios com enunciados e níveis de dificuldade para algumas tecnologias.
 
-5. **Suite de testes com 43 assertions** — cobertura de casos de sucesso, erros, edge cases (string vazia, nível inválido, código único por certificado, escrita em disco).
+**3. Comandos com nomes e espaços**
 
-6. **Servidor MCP completo** — 4 ferramentas tipadas registradas via `registerTool` da SDK oficial do MCP, com tratamento de erros e `isError: true` para falhas recuperáveis.
+Ajustei o processamento dos comandos para aceitar nomes com espaços entre aspas, como no exemplo do certificado.
 
-7. **`.gitignore` e segurança** — `node_modules/`, `build/`, `.env*`, `.bob/mcp.json` (que contém caminho absoluto) e certificados gerados localmente são ignorados pelo Git.
+**4. Alternativa quando não há um desafio cadastrado**
 
----
+Adicionei uma opção para gerar um desafio genérico quando a tecnologia não possui um exercício específico no banco de dados.
 
-## 📖 O que Aprendi Durante o Desafio
+**5. Testes automatizados**
 
-Este projeto foi construído inteiramente com o IBM Bob como par de programação. O aprendizado foi em múltiplas dimensões:
+Criei uma suíte com 43 verificações para ajudar a encontrar problemas durante o desenvolvimento.
 
-**Sobre o IBM Bob e MCP:**
-- Slash commands locais (`.bob/commands/*.md`) são a forma nativa e mais simples de estender o Bob com comportamentos customizados por projeto.
-- O Model Context Protocol (MCP) permite ir além: transforma lógica TypeScript em ferramentas que o Bob invoca nativamente, com tipagem e tratamento de erros estruturado.
-- O transporte `stdio` é o padrão para servidores MCP locais — o Bob gerencia o processo filho automaticamente via `mcp.json`.
+**6. Servidor MCP**
 
-**Sobre TypeScript e arquitetura:**
-- O `module: Node16` + `moduleResolution: Node16` do `tsconfig.json` exige que imports de módulos locais usem extensão `.js` mesmo em arquivos `.ts` — isso causou erros de build que foram depurados iterativamente.
-- Separar interfaces em `types.ts` e lógica de serviço em `services.ts` torna o código testável e reutilizável entre o módulo de comandos e o servidor MCP.
-- Retornar `{ content, isError: true }` em vez de lançar exceções é a forma correta de reportar falhas recuperáveis em ferramentas MCP.
+Implementei ferramentas para disponibilizar as funcionalidades do projeto ao IBM Bob.
 
-**Sobre o processo de desenvolvimento com IA:**
-- Descrever o comportamento esperado com clareza (entrada, saída, casos de borda) produz código mais correto do que especificar a implementação.
-- Testes automatizados escritos junto com a implementação revelaram bugs de tokenização e formatação antes que chegassem ao usuário.
-- Revisar os arquivos gerados pelo agente é essencial — especialmente para evitar que caminhos absolutos, tokens ou configurações locais sejam enviados ao repositório.
+**7. Cuidados com os arquivos**
+
+Configurei o `.gitignore` para evitar o envio de dependências, arquivos de compilação, configurações locais e certificados gerados durante os testes.
+
+Essas melhorias foram feitas enquanto eu explorava as possibilidades do IBM Bob e aprendia mais sobre programação com o auxílio da IA.
 
 ---
 
-## 📊 Trilhas Disponíveis (20 trilhas)
+## 📖 O que aprendi com esse projeto
+
+Como estou dando meus primeiros passos com o IBM Bob, este projeto foi uma oportunidade de aprender na prática, testar ideias e entender melhor como a IA pode ajudar no desenvolvimento de software.
+
+### Sobre o IBM Bob
+
+- Aprendi a criar comandos personalizados para executar tarefas específicas.
+- Comecei a entender como orientar a IA para desenvolver funcionalidades a partir de instruções.
+- Percebi a importância de explicar claramente o que espero de cada comando.
+- Entendi que o código gerado pela IA precisa ser revisado e testado.
+
+### Sobre o MCP
+
+- Conheci o conceito de Model Context Protocol.
+- Aprendi como disponibilizar funcionalidades de um projeto por meio de ferramentas.
+- Entendi melhor como configurar um servidor MCP local para ser utilizado pelo IBM Bob.
+
+### Sobre programação
+
+- Pratiquei a organização de arquivos em TypeScript.
+- Conheci melhor o uso de interfaces e a separação de responsabilidades.
+- Trabalhei com testes automatizados.
+- Aprendi um pouco mais sobre compilação, dependências e configuração de projetos Node.js.
+
+### Sobre aprender com inteligência artificial
+
+Uma das principais lições foi perceber que usar IA para programar não significa apenas pedir que ela escreva o código.
+
+Também é importante explicar o objetivo, conferir o resultado, executar os testes e entender os erros que aparecem.
+
+Como iniciante, sei que ainda tenho muito a aprender, mas desenvolver esse projeto me ajudou a dar mais um passo nessa jornada.
+
+---
+
+## 📊 Trilhas disponíveis
+
+O sistema utiliza uma base de dados fictícia com 20 trilhas de aprendizagem.
 
 | ID | Tecnologia | Nível | XP |
-|----|-----------|-------|-----|
+|---:|---|---|---:|
 | 1 | Java | Intermediário | 48.000 |
 | 2 | Python | Básico | 38.000 |
 | 3 | Machine Learning | Avançado | 72.000 |
@@ -306,26 +376,32 @@ Este projeto foi construído inteiramente com o IBM Bob como par de programaçã
 | 19 | Unity | Intermediário | 55.000 |
 | 20 | IBM Watson | Avançado | 85.000 |
 
+Os dados servem para simular uma plataforma de aprendizagem e não representam informações oficiais ou atuais sobre os cursos da DIO.
+
 ---
 
-## 🔒 Segurança — O que NÃO enviar ao GitHub
+## 🔒 Cuidados antes de enviar o projeto para o GitHub
 
-Antes de qualquer `git push`, verifique:
+Durante o desenvolvimento, também aprendi que é importante prestar atenção aos arquivos que serão enviados para um repositório público.
 
-| Arquivo | Por quê ignorar |
+Confira se os seguintes itens estão sendo ignorados pelo Git:
+
+| Arquivo ou pasta | Motivo |
 |---|---|
-| `.bob/mcp.json` | Contém caminho absoluto específico da sua máquina |
-| `node_modules/` | Dependências geradas localmente |
-| `mcp/build/` | Artefatos de compilação TypeScript |
-| `.env` / `.env.*` | Variáveis de ambiente (API keys, tokens) |
-| `docs/certificados-emitidos/` | Dados pessoais gerados localmente |
+| `.bob/mcp.json` | Contém caminhos específicos do computador. |
+| `node_modules/` | Contém dependências instaladas localmente. |
+| `mcp/build/` | Contém arquivos gerados durante a compilação. |
+| `.env` e `.env.*` | Podem conter informações secretas. |
+| `docs/certificados-emitidos/` | Contém arquivos gerados localmente. |
 
-Todos esses padrões já estão configurados no [`.gitignore`](.gitignore) na raiz do projeto.
+Essas configurações estão previstas no `.gitignore` do projeto. Mesmo assim, vale conferir o que será enviado antes de executar um `git push`.
 
 ---
 
 ## 📜 Licença
 
-MIT — DIO Digital Innovation One × IBM Bob
+MIT — projeto desenvolvido como parte dos estudos da formação IBM Bob IA de Nível Empresarial, da DIO.
 
-*Made with Bob*
+---
+
+*🚀 Um projeto de aprendizado, desenvolvido com a ajuda do IBM Bob e com muita vontade de aprender mais sobre programação e inteligência artificial.*
